@@ -1,0 +1,9 @@
+{
+	"name": "dantestADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "497ec400-e35b-42da-9b08-8f7dcce9ee7d",
+		"tenantId": "8be73339-4172-4dc9-975b-9c1029a30867"
+	}
+}
