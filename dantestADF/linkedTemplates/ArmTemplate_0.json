@@ -107,7 +107,7 @@
 						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     isolationLevel: 'READ_UNCOMMITTED',",
-						"     query: 'SELECT \\'\\' as firstName \\'\\' as lastName \\'\\' as id',",
+						"     query: 'SELECT \\'\\' as firstName, \\'\\' as lastName, \\'\\' as id',",
 						"     format: 'query') ~> source1",
 						"source1 derive(firstName = $in_firstName,",
 						"          lastName = $in_lastName,",
@@ -173,8 +173,7 @@
 								"datasetParameters": {
 									"source1": {},
 									"sink1": {}
-								},
-								"linkedServiceParameters": {}
+								}
 							},
 							"staging": {},
 							"compute": {
