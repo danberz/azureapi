@@ -1,0 +1,57 @@
+{
+	"name": "pl_insertPerson",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_InsertPerson",
+						"type": "DataFlowReference",
+						"parameters": {
+							"in_firstName": {
+								"value": "'@{pipeline().parameters.p_firstName}'",
+								"type": "Expression"
+							},
+							"in_lastName": {
+								"value": "'@{pipeline().parameters.p_lastName}'",
+								"type": "Expression"
+							},
+							"in_id": {
+								"value": "'@{pipeline().parameters.p_id}'",
+								"type": "Expression"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"parameters": {
+			"p_firstName": {
+				"type": "string"
+			},
+			"p_lastName": {
+				"type": "string"
+			},
+			"p_id": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
